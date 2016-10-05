@@ -1,0 +1,27 @@
+{
+  "name": "ng-google-recaptcha",
+  "description": "AngularJS module that implements Google's I'm not robot (reCaptcha)",
+  "main": "ng-google-recaptcha.js",
+  "authors": [
+    "Davletov Almir"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "google",
+    "recaptcha",
+    "captcha"
+  ],
+  "homepage": "https://github.com/davletovalmir/ng-google-recaptcha",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
