@@ -40,14 +40,16 @@
         this.callbacks = {
           success: () => {
             let response = window.grecaptcha.getResponse(this.widgetId);
-            this.config.success(response);
+            this.config.success.call(this, response);
           },
-          expired: () => { this.config.expired(this.widgetId); },
-          created: (dom) => { this.config.created(dom, this.widgetId); }
+          expired: () => { this.config.expired.call(this, this.widgetId); },
+          created: (dom) => { this.config.created.call(this, dom, this.widgetId); }
         };
 
         this.setConfig(config);
+      }
 
+      render () {
         recaptchaDeferred.promise.then(this._render.bind(this));
       }
 

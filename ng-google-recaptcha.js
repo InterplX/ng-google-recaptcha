@@ -51,22 +51,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.callbacks = {
             success: function success() {
               var response = window.grecaptcha.getResponse(_this.widgetId);
-              _this.config.success(response);
+              _this.config.success.call(_this, response);
             },
             expired: function expired() {
-              _this.config.expired(_this.widgetId);
+              _this.config.expired.call(_this, _this.widgetId);
             },
             created: function created(dom) {
-              _this.config.created(dom, _this.widgetId);
+              _this.config.created.call(_this, dom, _this.widgetId);
             }
           };
 
           this.setConfig(config);
-
-          recaptchaDeferred.promise.then(this._render.bind(this));
         }
 
         _createClass(Recaptcha, [{
+          key: 'render',
+          value: function render() {
+            recaptchaDeferred.promise.then(this._render.bind(this));
+          }
+        }, {
           key: 'reload',
           value: function reload() {
             var widgetId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.widgetId;
