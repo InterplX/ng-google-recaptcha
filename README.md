@@ -21,23 +21,23 @@ This module lets you to create and manage as many reCaptcha instances, as you wa
 - Get recaptcha key for your domain [here][recaptcha].
 
 - Include ng-google-recaptcha script.
-```
+```HTML
 <script src="ng-google-recaptcha.js"></script>
 ```
 
 - Add ngGoogleRecaptcha to your app dependencies
-```
+```JavaScript
 var app = angular.module('myApp', ['ngGoogleRecaptcha']);
 ```
 
 - Place a container to render recaptcha
-```
+```HTML
 <div class="my-recaptcha" data-sitekey="YOUR SITE KEY"></div>
 ```
 > Note: You may define site key in js code, to make it reusable (for example, if you have more than 1 instances of recaptcha).
 
 - Create and render recaptcha instance
-```
+```JavaScript
 var myCtrl = function (recaptchaFactory) {
     var recaptcha = recaptchaFactory.create('.my-recaptcha', {
         sitekey: 'yoursitekey'
@@ -54,7 +54,7 @@ angular
 ```
 
 - Define callbacks (optionally)
-```
+```JavaScript
 var callbacks = {
     /* executes when recaptcha is successfully rendered on page */
     created: function (widgetId) {
@@ -82,7 +82,7 @@ recaptcha.render();
 ```
 
 - Customize look (optional)
-```
+```JavaScript
 var lookConfig = {
     /* 'light' by default */
     theme: 'dark',
