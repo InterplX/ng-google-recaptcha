@@ -89,7 +89,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var callback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : angular.noop;
 
-            $http.get(url, params).success(function (response) {
+            $http.get(url, params).then(function (response) {
               _this2.isVerified = true;
               _this2.errors = [];
               callback(response);
