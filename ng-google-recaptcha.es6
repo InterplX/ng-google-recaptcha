@@ -34,7 +34,8 @@
           theme: this._domAttr('data-theme') || 'light',
           type: this._domAttr('data-type') || 'image',
           size: this._domAttr('data-size') || 'normal',
-          tabindex: this._domAttr('data-tabindex') || 0
+          tabindex: this._domAttr('data-tabindex') || 0,
+		  hl: this._domAttr('hl') || 'en'
         };
 
         this.callbacks = {
@@ -86,7 +87,8 @@
           'theme': this.config.theme,
           'type': this.config.type,
           'size': this.config.size,
-          'tabindex': this.config.tabindex
+          'tabindex': this.config.tabindex,
+		  'hl': this.config.hl
         });
         this.dom.setAttribute('data-widgetid', this.widgetId);
         this.callbacks.created(this.dom);
